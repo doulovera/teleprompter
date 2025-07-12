@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teleprompter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="teleprompter">
+            <div class="text-container">
+                <div class="scroll-text"></div>
+            </div>
+        </div>
+        <div class="controls">
+            <textarea id="text-input" placeholder="Paste your text here..."></textarea>
+            <div class="control-group">
+                <label for="speed">Speed (x0.5 to x2)</label>
+                <input type="range" id="speed" min="0.5" max="2" value="1" step="0.1">
+            </div>
+            <div class="control-group">
+                <label for="font-size">Font Size</label>
+                <input type="number" id="font-size" value="48">
+            </div>
+            <div class="control-group">
+                <label for="font-family">Font Family</label>
+                <select id="font-family">
+                    <option value="sans-serif">Normal</option>
+                    <option value="monospace">Monospace</option>
+                </select>
+            </div>
+            <button id="toggle-prompter">Toggle Prompter</button>
+            <button id="reset-prompter">Reset</button>
+            <button id="fullscreen-button">Fullscreen</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

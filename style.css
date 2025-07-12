@@ -1,0 +1,111 @@
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+    width: 90%;
+    max-width: 1200px;
+}
+
+.teleprompter {
+    flex-grow: 1;
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    overflow: hidden;
+    height: 70vh; /* 70% of screen height */
+}
+
+.text-container {
+    height: 100%;
+    overflow-y: scroll;
+    position: relative;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+.text-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+}
+
+.scroll-text {
+    width: 100%;
+    text-align: center;
+    font-size: 48px;
+    line-height: 1.5;
+    padding: 50vh 20px; /* Initial top/bottom padding */
+    box-sizing: border-box;
+}
+
+.controls {
+    width: 300px;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+textarea {
+    width: 100%;
+    height: 200px;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border: 1px solid #333;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input[type="range"],
+input[type="number"],
+select,
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: #e0e0e0;
+    border: 1px solid #555;
+    cursor: pointer;
+}
+
+.teleprompter.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    border: none;
+}
+
+@media (max-width: 768px) {
+    .controls {
+        display: none;
+    }
+    .container {
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+    }
+    .teleprompter {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+}
