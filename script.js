@@ -13,6 +13,13 @@ let animationId;
 let speed = 1;
 let isScrolling = false;
 
+function updateButtonStates() {
+    const hasText = scrollText.innerText.trim().length > 0;
+    togglePrompterButton.disabled = !hasText;
+    resetPrompterButton.disabled = !hasText;
+    fullscreenButton.disabled = !hasText;
+}
+
 function scroll() {
     const distance = 1;
     textContainer.scrollTop += distance * speed;
@@ -60,6 +67,7 @@ function toggleFullscreen() {
 textInput.addEventListener('input', (e) => {
     scrollText.innerText = e.target.value;
     resetPrompter();
+    updateButtonStates();
 });
 
 speedControl.addEventListener('input', (e) => {
@@ -89,3 +97,4 @@ document.addEventListener('keydown', (e) => {
 // Initial state
 scrollText.innerText = textInput.value;
 resetPrompter();
+updateButtonStates();
